@@ -1,0 +1,44 @@
+#%RAML 1.0
+title: sales-api
+description: sales report api
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/983fdacc-20c3-4083-994b-fd794d40a0b4 # 
+/read-productDetails:
+
+  get:
+    queryParameters:
+      productTitle:
+        description: "productId"
+        required: true
+        type: string
+        example:
+          "2233e54"
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "products":[
+                  {
+                    "productId":2233e54,
+                    "productName":"pen"
+                  },
+                  {
+                    "productId":3344r55,
+                    "productName":"book"
+                  },
+
+                  ]
+              }
+      400:
+        description: failure
+        body:
+          application/json:
+           example:
+             {
+            "message": "failed"
+             }
+
+  
+
+   
